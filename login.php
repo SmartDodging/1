@@ -1,4 +1,4 @@
-<?php include("nav.php");?>
+<?php include 'data.php'; ?>
 <center>
     <h1>Log In!</h1>
     <div class="container">

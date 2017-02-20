@@ -1,4 +1,4 @@
-<?php include 'nav.php'; ?>
+<?php include 'data.php'; ?>
 <center>
     <h1>Sign Up!</h1>
         <div class="demo">
