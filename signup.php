@@ -21,7 +21,8 @@
                 </form>
                  <p class="help-block" style="color:red;">Fields with a * are required</p>
                 <br>
-                <button class="btn btn-success" type="submit" style="color:red;"><span class="glyphicon glyphicon-heart"></span></button>
+                <button class="btn btn-success" type="submit" style="color:red;"><span class="glyphicon glyphicon-heart">   
+                SignUp!</span></button>
             </div>
         </div>
 </center>
