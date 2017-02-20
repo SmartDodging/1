@@ -19,6 +19,7 @@
                     <label for="form-el-password">Repeat password*</label><br>
                     <input type="password" id="form-el-password" class="form-control" placeholder="Password" required> 
                 </form>
+                 <p class="help-block" style="color:red;">Fields with a * are required</p>
                 <br>
                 <button class="btn btn-success" type="submit" style="color:red;"><span class="glyphicon glyphicon-heart"></span></button>
             </div>
