@@ -1,1 +1,1 @@
-<?php include 'data.php';?>
+<?php include 'nav.php';?>
