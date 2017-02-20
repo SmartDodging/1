@@ -1,9 +1,6 @@
-canvas{
-    background-color: aquamarine;
-}
 .navbar-inverse{
     background-color: firebrick;
 }
-.active{
-    background-color: brown;
+#a-1{
+    color: lime;
 }
