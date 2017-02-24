@@ -1,9 +1,16 @@
 .navbar-inverse{
-    background-color: firebrick;
+    background-color: firebrick; 
 }
 #a-1{
     color: darkorange;
 }
 body{
     background-color: darkgray;
+}
+#downloadbtn{
+    border: 2px solid firebrick;
+    height:100px;
+    width:200px;
+    color:firebrick;
+    outline:0;
 }

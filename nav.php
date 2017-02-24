@@ -22,7 +22,7 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="home.php">Home</a></li>
+                <li class=""><a href="home.php">Home</a></li>
                 <li class="dropdown">
                   <a class="dropdown-toggle" data-toggle="dropdown" href="#">The Game <span class="caret"></span></a>
                   <ul class="dropdown-menu">
@@ -40,7 +40,7 @@
                   </ul>
                 </li>
                 <li><a href="#">Community</a></li>
-                <li><a href="#">Download (WIP)</a></li>
+                <li><a href="download.php">Download (WIP)</a></li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
                 <li><a href="signup.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
