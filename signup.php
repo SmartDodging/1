@@ -7,8 +7,7 @@ if(!empty($_POST))
                 $password = clean($_POST["form-el-password"]);
                 $password2 = clean($_POST["form-el-password2"]);
             if($password == $password2){
-              $sql = "',
-              '" . "INSERT INTO `users` (`UserID`,
+              $sql = "INSERT INTO `users` (`UserID`,
                                                    `Username`,
                                                    `Email`,
                                                    `Password`)
