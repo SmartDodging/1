@@ -1,5 +1,18 @@
 <?php
 include ('data.php');
+
+function clean($tekst){
+                        $tekst = trim($tekst);
+                        $tekst = strip_tags($tekst);
+
+                        //escaped dingen als  '' en ""
+                        $tekst = addslashes($tekst);
+
+                        //alleen voor mysql en doet t zelfde als addslashes
+                        //$tekst = mysql_real_escape_string($conn, $tekst);
+                        return $tekst;
+}
+
 if(!empty($_POST))
         {
                 $email = clean($_POST["form-el-email"]);
