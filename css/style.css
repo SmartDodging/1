@@ -3,9 +3,12 @@
 }
 #a-1{
     color: darkorange;
+    font-size: 25px;
 }
 body{
     background-color: darkgray;
+    background-image: url(IMG/001-subtle-light-pattern-background-texture-vol5.jpg);
+    font-size: 20px;
 }
 #downloadbtn{
     border: 2px solid firebrick;
@@ -13,4 +16,10 @@ body{
     width:200px;
     color:firebrick;
     outline:0;
+}
+hr{
+    border: 1px solid firebrick;  
+}
+h1{
+    color: darkorange;
 }

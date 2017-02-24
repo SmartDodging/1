@@ -28,7 +28,7 @@
                   <ul class="dropdown-menu">
                     <li><a href="#">About</a></li>
                     <li><a href="#">Wiki</a></li>
-                    <li><a href="#">(No clue what to fill in)</a></li>
+                    <li><a href="download.php">Download (WIP)</a></li>
                   </ul>
                 </li>
                 <li class="dropdown">
@@ -39,8 +39,6 @@
                     <li><a href="#">Friends</a></li>
                   </ul>
                 </li>
-                <li><a href="#">Community</a></li>
-                <li><a href="download.php">Download (WIP)</a></li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
                 <li><a href="signup.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
