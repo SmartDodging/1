@@ -11,7 +11,8 @@
             <label for="form-el-password">Password</label>
             <br>
             <input type="password" id="form-el-password" class="form-control" placeholder="Password">
-        </form><br>
+        </form>
+        <br>
         <button class="btn btn-danger" type="button"><span class="glyphicon glyphicon-ok"></span>   login</button>
     </div>
 </center>

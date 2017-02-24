@@ -10,8 +10,6 @@
         <title>Smart Dodging</title><br>   
     </head>
     <body>
-
-    </html>
         <nav class="navbar navbar-inverse">
           <div class="container-fluid">
             <div class="navbar-header">
