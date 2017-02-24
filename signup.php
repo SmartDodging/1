@@ -1,27 +1,31 @@
 <?php
 include ('data.php');
-$hash = $_GET['hash'];
-if ( !empty($_POST)){
-    $username = $_POST['form-el-username'];
-    $password = $_POST['form-el-password'];
-    $password2 = $_POST['form-el-password2'];
-    $message = "Password has been set, you can now log in!";
-    $error = "Password does not match";
-    $email = $_GET['form-el-email'];
-
-    if($password == $password2){
-        echo "<script type='text/javascript'>alert('$message');</script>";
-        $sql = "UPDATE users SET password='$password' WHERE hash='$hash'";
-        mysqli_query($conn, $sql);
-        header("location: ./index.php?content=login_form&email=$email");
-
+if(!empty($_POST))
+        {
+                
+                
+        
+                $email = POST["form-el-email"]);
+                $username = clean($_POST["form-el-username"]);
+                $password = clean($_POST["form-el-password"]);
+                $password2 = clean($_POST["form-el-password2"]);
+            if($password == $password2){
+              $sql = "INSERT INTO `users` (`UserID`,
+                                     `Username`,
+                                     `Email`,
+                                     `Password`)
+                VALUES              (NULL,
+                                     '".$username."',
+                                     '".$email."',
+                                     '".$password"')";
+                
+       // echo $sql;
+       mysqli_query($conn, $sql);
+            }else{
+                echo "<script>alert('Passwords no woekrie')</script>";
+            }
     }
-    else{
-        echo "<script type='text/javascript'>alert('$error');</script>";
-    }
 
-
-}
 ?>
 <center>
     <h1>Sign Up!</h1>
