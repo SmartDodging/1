@@ -2,22 +2,21 @@
 include ('data.php');
 if(!empty($_POST))
         {
-                
-                
-        
-                $email = POST["form-el-email"]);
+                $email = clean($_POST["form-el-email"]);
                 $username = clean($_POST["form-el-username"]);
                 $password = clean($_POST["form-el-password"]);
                 $password2 = clean($_POST["form-el-password2"]);
             if($password == $password2){
-              $sql = "INSERT INTO `users` (`UserID`,
-                                     `Username`,
-                                     `Email`,
-                                     `Password`)
-                VALUES              (NULL,
-                                     '".$username."',
-                                     '".$email."',
-                                     '".$password"')";
+              $sql = "',
+              '" . "INSERT INTO `users` (`UserID`,
+                                                   `Username`,
+                                                   `Email`,
+                                                   `Password`)
+                              VALUES              (NULL,
+                                                   '".$username."',
+                                                   '".$email."', 
+                                                   '".$password."')";
+
                 
        // echo $sql;
        mysqli_query($conn, $sql);
