@@ -1,7 +1,14 @@
 <?php
-$servername = "mysql.hostinger.nl";
-$username = "u155808843_dodge";
-$password = "kaas123";
-$dbname = "u155808843_data";
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+    function dblogin()
+    {
+        $servername = "smartdodging.com.mysql";
+        $username = "smartdodging_com";
+        $password = "BGUfPBSW";
+        $dbname = "smartdodging_com";
+        $login = mysqli_connect($servername, $username, $password, $dbname);
+        if ($login->connect_errno) {
+            echo "Failed to connect to MySQL: (" . $login->connect_errno . ") " . $login->connect_error;
+        }
+        return $login;
+    }
 ?>
