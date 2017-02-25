@@ -35,6 +35,7 @@ $conn = dblogin();
             header("location: home.php");
     }
 
+
 echo "
    <center>
     <h1>Sign Up!</h1>
