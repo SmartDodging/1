@@ -14,7 +14,7 @@ $conn = dblogin();
         $username = clean($_POST["form-el-username"]);
         $password = clean($_POST["form-el-password"]);
         $password2 = clean($_POST["form-el-password2"]);
-        if ($password == $password2){
+        if ($password == $password2 && !empty($_POST)){
 
                 $sql = "INSERT INTO `users` (`UserID`,
                                            `Username`,
@@ -25,8 +25,11 @@ $conn = dblogin();
                                            '" . $email . "', 
                                            '" . $password . "')";
                 mysqli_query($conn, $sql);
-                echo "<script>alert('You have succesfully registered!')</script>";
-            } else{
+                echo "<script>alert('You have successfully registered!')</script>";
+            }elseif( empty($_POST)){
+            echo "<script>alert('Only use numbers and letters!')</script>";
+        }
+            else{
             echo "<script>alert('Passwords do not match!')</script>";
         }
             header("location: home.php");
