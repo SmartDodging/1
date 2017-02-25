@@ -23,7 +23,7 @@ $conn = dblogin();
                               VALUES      (NULL,
                                            '" . $username . "',
                                            '" . $email . "', 
-                                           '" . $password . "')";
+                                           '" . password_hash($password ,PASSWORD_DEFAULT) . "')";
                 mysqli_query($conn, $sql);
                 echo "<script>alert('You have successfully registered!')</script>";
             }elseif( empty($_POST)){
