@@ -29,7 +29,8 @@ $connect = dblogin();
                                            '" . password_hash($password ,PASSWORD_DEFAULT) . "')";
                 mysqli_query($connect, $sql);
                 echo "<script>alert('You have successfully registered!')</script>";
-            header("location: home.php");
+                mail($email,$subject,$message);
+                header("location: home.php");
             }
             elseif($email == $rowselect['Email']){
                 echo "<script>alert('Email already in use!')</script>";
