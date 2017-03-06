@@ -1,7 +1,7 @@
 <?php 
     include("data.php");
     include ('connect_dp.php');
-    $conn = dblogin();
+    $connect = dblogin();
     echo "
         <center>
             <h1>The LeaderBoards</h1>
@@ -26,6 +26,6 @@
          ";
         $sql = "SELECT `userId`, `username`, `highScore`, `gamesPlayed`, `puzzlesSolved`, `deaths`, `username`
                FROM   `userDetails`";
-       $result = mysqli_query($conn, $sql);
+       $result = mysqli_query($connect, $sql);
 ?>
  

@@ -11,28 +11,28 @@ body{
     font-size: 20px;
 }
 #downloadbtn{
-    border: 2px solid firebrick;
-    height:100px;
-    width:200px;
-    color:firebrick;
-    outline:0;
-    font-size: 20px;
+    border: 2px solid firebrick !important;
+    height:100px !important;
+    width:200px !important;
+    color:firebrick !important;
+    outline:0 !important;
+    font-size: 20px !important;
 }
 hr{
-    border: 1px solid firebrick;  
+    border: 1px solid firebrick !important;  
 }
 h1{
-    color: darkorange;
+    color: darkorange !important;
 }
 .pens, tr, th, td{
-    border: 2px solid black;
-    border-collapse: collapse;
+    border: 2px solid black !important;
+    border-collapse: collapse !important;
 }
 th{
-    width: 300px;
-    text-align: center;
+    width: 300px !important;
+    text-align: center !important;
 }
 td{
-   width: 300px;
-   padding: 5px;
+   width: 300px !important;
+   padding: 5px !important;
 }
