@@ -1,7 +1,7 @@
 <?php
 include ('data.php');
 include ('connect_dp.php');
-$conn = dblogin();
+$connect = dblogin();
     function clean($text)
     {
         $text = trim($text);
@@ -15,7 +15,10 @@ $conn = dblogin();
         $password = clean($_POST["form-el-password"]);
         $password2 = clean($_POST["form-el-password2"]);
         if ($password == $password2 && !empty($_POST)){
-
+            $sqlselect = "SELECT `Email`, `Username` FROM `users` WHERE Email='$email' OR Username='$username'";
+            $resultselect = mysqli_query($connect, $sqlselect);
+            $rowselect = mysqli_fetch_assoc($resultselect);
+            if($email != $rowselect['Email'] && $username != $rowselect['Username']){
                 $sql = "INSERT INTO `users` (`UserID`,
                                            `Username`,
                                            `Email`,
@@ -24,15 +27,22 @@ $conn = dblogin();
                                            '" . $username . "',
                                            '" . $email . "', 
                                            '" . password_hash($password ,PASSWORD_DEFAULT) . "')";
-                mysqli_query($conn, $sql);
+                mysqli_query($connect, $sql);
                 echo "<script>alert('You have successfully registered!')</script>";
+            header("location: home.php");
+            }
+            elseif($email == $rowselect['Email']){
+                echo "<script>alert('Email already in use!')</script>";
+            }
+            else{
+                echo "<script>alert('Username already in use!')</script>";
+            }
             }elseif( empty($_POST)){
             echo "<script>alert('Only use numbers and letters!')</script>";
         }
             else{
             echo "<script>alert('Passwords do not match!')</script>";
         }
-            header("location: home.php");
     }
 
 
