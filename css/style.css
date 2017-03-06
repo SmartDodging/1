@@ -16,10 +16,23 @@ body{
     width:200px;
     color:firebrick;
     outline:0;
+    font-size: 20px;
 }
 hr{
     border: 1px solid firebrick;  
 }
 h1{
     color: darkorange;
+}
+.pens, tr, th, td{
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+th{
+    width: 300px;
+    text-align: center;
+}
+td{
+   width: 300px;
+   padding: 5px;
 }
