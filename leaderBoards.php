@@ -2,6 +2,12 @@
     include("data.php");
     include ('connect_dp.php');
     $connect = dblogin();
+
+
+        $sql = "SELECT `UserId`, `Username`, `HighScore`, `GamesPlayed`, `Solved`, `Deaths`,
+               FROM   `userDetails`";
+        $result = mysqli_query($connect, $sql);
+        $records = mysqli_fetch_array($result, MYSQLI_ASSOC);
     echo "
         <center>
             <h1>The LeaderBoards</h1>
@@ -15,7 +21,7 @@
                         <th>Deaths</th>
                     </tr>
                     <tr>
-                        <td>pens</td>
+                        <td>".records["Username"]."</td>
                         <td>pens</td>
                         <td>pens</td>
                         <td>pens</td>
@@ -24,8 +30,5 @@
                 </table>
             </center>   
          ";
-        $sql = "SELECT `userId`, `username`, `highScore`, `gamesPlayed`, `puzzlesSolved`, `deaths`, `username`
-               FROM   `userDetails`";
-       $result = mysqli_query($connect, $sql);
 ?>
  
