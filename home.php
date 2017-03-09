@@ -1,2 +1,5 @@
-<?php include 'data.php'; ?>
+<?php 
+    include 'data.php';
+    include 'news.php';
+?>
 

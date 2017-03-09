@@ -28,6 +28,7 @@
                   <ul class="dropdown-menu">
                     <li><a href="#">About</a></li>
                     <li><a href="#">Wiki</a></li>
+                    <li><a href="#">News</a></li>
                     <li><a href="download.php">Download (WIP)</a></li>
                   </ul>
                 </li>

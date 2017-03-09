@@ -16,7 +16,7 @@ body{
     width:200px !important;
     color:firebrick !important;
     outline:0 !important;
-    font-size: 20px !important;
+    font-size: 20px !important; 
 }
 hr{
     border: 1px solid firebrick !important;  
@@ -36,3 +36,42 @@ td{
    width: 300px !important;
    padding: 5px !important;
 }
+.btn-blog {
+    color: #ffffff;
+    background-color: #37d980;
+    border-color: #37d980;
+    border-radius:0;
+    margin-bottom:10px
+}
+.btn-blog:hover,
+.btn-blog:focus,
+.btn-blog:active,
+.btn-blog.active,
+.open .dropdown-toggle.btn-blog {
+    color: white;
+    background-color:#34ca78;
+    border-color: #34ca78;
+}
+h2{
+    color:#34ca78;  
+}
+.margin10{
+     margin-bottom:10px; margin-right:10px;
+}
+.blogShort{ 
+    border-bottom:1px solid black;
+    width: 700px;
+    /*height: 500px;*/
+}
+img{
+    width: 120px;
+    height: 120px;
+}
+.blog{
+    width: 500px;
+    height: 500px;
+}
+
+
+
+
