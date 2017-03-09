@@ -29,6 +29,9 @@ $connect = dblogin();
                                            '" . password_hash($password ,PASSWORD_DEFAULT) . "')";
                 mysqli_query($connect, $sql);
                 echo "<script>alert('You have successfully registered!')</script>";
+                $sqlfk = "INSERT INTO `userDetails` (`Username`)
+                          VALUE     ('".$username."')";
+                mysqli_query($connect, $sqlfk);
                 mail($email,$subject,$message);
                 header("location: home.php");
             }
