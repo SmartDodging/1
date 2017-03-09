@@ -9,8 +9,8 @@ $connect = dblogin();
         $text = addslashes($text);
         return $text;
     }
-    $subject = "activation";
-    $message = "Click the link to activate your account. http://localhost/2016-2017/DavidAle/inlog_registatie_systeem/index.php?content=activation&hash=$hash&email=$email";
+    $subject = "activate your account!";
+    $message = "Click the link to activate your account. http://smartdodging.com/activation.php&email=$email";
     if ( isset($_POST["submit"])) {
         $email = clean($_POST["form-el-email"]);
         $username = clean($_POST["form-el-username"]);

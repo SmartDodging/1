@@ -4,10 +4,12 @@
     $connect = dblogin();
 
 
-        $sql = "SELECT * FROM `users`, `userDetails`";
+        $sql = "SELECT users.Username, userDetails.HighScore, userDetails.GamesPlayed, userDetails.Solved, userDetails.Deaths
+        FROM Orders
+        INNER JOIN userDetails;";
         $resultselect = mysqli_query($connect, $sql);
         $records = mysqli_fetch_assoc($resultselect);
-        var_dump($records);
+        var_dump($records['Username']);
     echo "
         <center>
             <h1>The LeaderBoards</h1>
@@ -27,7 +29,7 @@
                         <td>pens</td>
                         <td>pens</td>
                     </tr>
-                </table>s
+                </table>
             </center>   
          ";
 ?>
