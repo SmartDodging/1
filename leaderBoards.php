@@ -6,7 +6,8 @@
 
         $sql = "SELECT users.Username, userDetails.HighScore, userDetails.GamesPlayed, userDetails.Solved, userDetails.Deaths
         FROM Orders
-        INNER JOIN userDetails;";
+        INNER JOIN userDetails
+        ON users.Username=userDetails.Username;";
         $resultselect = mysqli_query($connect, $sql);
         $records = mysqli_fetch_assoc($resultselect);
         var_dump($records['Username']);
