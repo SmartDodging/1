@@ -1,6 +1,10 @@
 
 <!--slider-->
-
+<div id="carousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indcators">
+        <li data-target></li>
+    </ol>
+</div>
 <!--news thingies-->
 <div class="container">
     <div id="blog" class="row">
