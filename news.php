@@ -1,4 +1,4 @@
-<?php include 'data.php' ?>
+
 <!--slider-->
 
 <!--news thingies-->
