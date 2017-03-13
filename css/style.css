@@ -61,6 +61,7 @@ h2{
 .blogShort{
     border-bottom:1px solid black;
     width: 700px;
+    float: 0;   
     /*height: 500px;*/
 }
 img{
@@ -73,7 +74,7 @@ img{
 }
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
-    width: 50%;
+    width: 60%;
     margin: auto;
 }
 /*.item{
@@ -81,7 +82,7 @@ img{
     height: 450px;   
 }*/
 #myCarousel{
-    width: 700px;
+    width: 750px;
     height: 450px;
     border: 2px solid white;
 }

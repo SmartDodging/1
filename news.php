@@ -18,7 +18,7 @@
         </div>
 
         <div class="item">
-          <img src="css/IMG/21601-news-logo-icon-vector-icon-vector-eps.png" alt="Img">
+          <img src="css/IMG/background-image-967820_960_720.jpg" alt="Img">
         </div>
 
 
@@ -36,7 +36,7 @@
     <!--news thingies-->
     <div class="container">
         <div id="blog" class="row">
-            <div class="col-md-10 blogShort">
+            <div class="col-md-10 col-md-offset-2 blogShort">
                 <h1>News</h1>
                     <img src="css/IMG/21601-news-logo-icon-vector-icon-vector-eps.png" alt="post img" class="pull-left img-responsive thumb margin10 img-thumbnail">
                     <!--<em>This snippet use <a href="http://bootsnipp.com/snippets/featured/sexy-sidebar-navigation" target="_blank">Sexy Sidebar Navigation</a></em>-->
@@ -48,7 +48,7 @@
                         </p></article>
                     <a class="btn btn-blog pull-right marginBottom10" href="#">READ MORE</a> 
             </div>
-            <div class="col-md-10 blogShort">
+            <div class="col-md-10 col-md-offset-2 blogShort">
                 <h1>News</h1>
                     <img src="css/IMG/21601-news-logo-icon-vector-icon-vector-eps.png" alt="post img" class="pull-left img-responsive thumb margin10 img-thumbnail">
                         <article><p>
@@ -59,7 +59,7 @@
                         </p></article>
                     <a class="btn btn-blog pull-right marginBottom10" href="#">READ MORE</a> 
             </div>  
-            <div class="col-md-10 blogShort">
+            <div class="col-md-10 col-md-offset-2 blogShort">
                 <h1>News</h1>
                     <img src="css/IMG/21601-news-logo-icon-vector-icon-vector-eps.png" alt="post img" class="pull-left img-responsive thumb margin10 img-thumbnail">
                         <article><p>
