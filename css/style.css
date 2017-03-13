@@ -76,6 +76,14 @@ img{
     width: 50%;
     margin: auto;
 }
-
+.item{
+    width: 800px;
+    height: 450px;   
+}
+#myCarousel{
+    width: 1000px;
+    height: 450px;
+    border: 2px solid white;
+}
 
 
