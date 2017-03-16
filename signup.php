@@ -9,13 +9,26 @@ $connect = dblogin();
         $text = addslashes($text);
         return $text;
     }
-    $subject = "activate your account!";
-    $message = "Click the link to activate your account. http://smartdodging.com/activation.php&email=$email";
+
     if ( isset($_POST["submit"])) {
         $email = clean($_POST["form-el-email"]);
         $username = clean($_POST["form-el-username"]);
         $password = clean($_POST["form-el-password"]);
         $password2 = clean($_POST["form-el-password2"]);
+        $headers = "Content-Type: text/html; charset=UTF-8"."\r\n";
+        $headers .= "From: info@smartdodging.com";
+        $subject = "activate your account!";
+        $message = "<!DOCTYPE html>
+                          <html>
+                            <head>
+                                <title>activation</title>
+                            </head>
+                            <body>
+                            <h3>Dear ".$_POST['Username']."Thanks for registering!</h3>".
+                                "<p>Click <a href='http://smartdodging.com/activation.php&email=".$email."'>here</a> to activate your account.</p>". 
+                                "<p>The SmartDodging Team</p>
+                            </body>
+                          </html>";
         if ($password == $password2 && !empty($_POST)){
             $sqlselect = "SELECT `Email`, `Username` FROM `users` WHERE Email='$email' OR Username='$username'";
             $resultselect = mysqli_query($connect, $sqlselect);
@@ -32,7 +45,7 @@ $connect = dblogin();
                 $sqlfk = "INSERT INTO `userDetails` (`Username`)
                           VALUE     ('".$username."')";
                 mysqli_query($connect, $sqlfk);
-                mail($email,$subject,$message);
+                mail($email,$subject,$message,$headers);
                 header("location: home.php");
             }
             elseif($email == $rowselect['Email']){

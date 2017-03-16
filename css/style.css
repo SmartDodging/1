@@ -77,18 +77,13 @@ img{
     width: 60%;
     margin: auto;
 }
-/*.item{
+.item{
     width: 800px;
     height: 450px;   
-}*/
+}
 #myCarousel{
     width: 750px;
     height: 450px;
     border: 2px solid white;
-<<<<<<< HEAD
-}
-=======
 }
 
-
->>>>>>> 73bf5303d2f1d2291cbefb5125fa7c42dcbd4558
