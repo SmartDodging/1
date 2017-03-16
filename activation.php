@@ -11,7 +11,7 @@ if ($rowselect['active'] == 0)
                 SET active = '1'
                 WHERE Email='$email'";
     mysqli_query($conn, $sql);
-    header("Location: http://smartdodging.com/home);
+    header("Location: http://smartdodging.com/home");
 }
 else
 {

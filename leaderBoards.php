@@ -2,15 +2,9 @@
     include("data.php");
     include ('connect_dp.php');
     $connect = dblogin();
-
-
-        $sql = "SELECT users.Username, userDetails.HighScore, userDetails.GamesPlayed, userDetails.Solved, userDetails.Deaths
-        FROM Orders
-        INNER JOIN userDetails
-        ON users.Username=userDetails.Username;";
-        $resultselect = mysqli_query($connect, $sql);
-        $records = mysqli_fetch_assoc($resultselect);
-        var_dump($records['Username']);
+    $sql = "SELECT * FROM userDetails";
+    mysqli_query($connect, $sql);
+    $result = mysqli_query($connect, $sql);
     echo "
         <center>
             <h1>The LeaderBoards</h1>
@@ -23,15 +17,22 @@
                         <th>Puzzles Solved</th>
                         <th>Deaths</th>
                     </tr>
+                    </table>";
+    while ( $records = mysqli_fetch_array($result, MYSQLI_ASSOC)) 
+         { 
+    echo "
+        <center>
+                <table class='pens' method=''>
                     <tr>
                         <td>".$records['Username']."</td>
-                        <td>pens</td>
-                        <td>pens</td>
-                        <td>pens</td>
-                        <td>pens</td>
+                        <td>".$records['HighScore']."</td>
+                        <td>".$records['GamesPlayed']."</td>
+                        <td>".$records['Solved']."</td>
+                        <td>".$records['Deaths']."</td>
                     </tr>
                 </table>
             </center>   
          ";
+         }
 ?>
- 
+  
