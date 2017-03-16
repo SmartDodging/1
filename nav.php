@@ -48,7 +48,7 @@
           </div>
         </nav>
         <script src="js/jquery-2.2.4.min.js"></script>        
-        <script src="js/bootstrap.min.js"></script> 
+        <script src="css/bootstrap/bootstrap/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script> 
         <script src="java.js"></script>
     </body>
 </html>

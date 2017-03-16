@@ -1,4 +1,7 @@
+
+
 <center>
+    <div class="container">
     <!--slider-->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
@@ -9,28 +12,32 @@
       </ol>
 
       <!-- Wrapper for slides -->
-      <div class="carousel-inner" role="listbox">
-          <img src="css/IMG/21601-news-logo-icon-vector-icon-vector-eps.png" alt="Img">
+        <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                  <img src="css/IMG/21601-news-logo-icon-vector-icon-vector-eps.png" alt="Img" class="item-img">
+                </div>
+
+                <div class="item">
+                  <img src="css/IMG/21601-news-logo-icon-vector-icon-vector-eps.png" alt="Img" class="item-img">
+                </div>
+
+                <div class="item">
+                  <img src="css/IMG/background-image-967820_960_720.jpg" alt="Img" class="item-img">
+                </div>
+
+
+              <!-- Left and right controls -->
+              <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+              </a>
+              <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+              </a>
+            </div>
         </div>
-
-        <div class="item">
-          <img src="css/IMG/21601-news-logo-icon-vector-icon-vector-eps.png" alt="Img">
         </div>
-
-        <div class="item">
-          <img src="css/IMG/background-image-967820_960_720.jpg" alt="Img">
-        </div>
-
-
-      <!-- Left and right controls -->
-      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      </a>
-      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      </a>
-    </div>
 </center>
+    
 
 <center>
     <!--news thingies-->
