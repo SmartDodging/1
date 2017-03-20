@@ -41,7 +41,6 @@ td{
     background-color: #37d980;
     border-color: #37d980;
     border-radius:0;
-    margin-bottom:10px
 }
 .btn-blog:hover,
 .btn-blog:focus,
@@ -55,10 +54,11 @@ td{
 h2{
     color:#34ca78;  
 }
-.margin10{
-    margin-bottom: 10px !imporatant; 
-    margin-right:  10px !imporatant;
-}
+/*.margin10{*/
+    /*margin-bottom: 10px !important; */
+    /*margin-right:  10px !important;*/
+/*}*/
+
 .blogShort{
     border-bottom:1px solid black;
     width: 700px;
@@ -79,17 +79,14 @@ h2{
     margin: auto;
 }
 .item{
-<<<<<<< HEAD
     width: 800px;
-    height: 450px;   
-=======
+    height: 450px;
     width: auto;
     height: auto; 
 }
 .item-img{
     width: 60%;
     height: 100%;
->>>>>>> origin/master
 }
 #myCarousel{
     width: 750px;

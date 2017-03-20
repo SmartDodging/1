@@ -7,10 +7,10 @@
         <link rel="icon" href="css/IMG/dodging.png">
         <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">       
-        <title>Smart Dodging</title><br>   
+        <title>Smart Dodging</title>
     </head>
-    <body>
-        <nav class="navbar navbar-inverse">
+    <body style="padding-top: 50px;">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
           <div class="container-fluid">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">

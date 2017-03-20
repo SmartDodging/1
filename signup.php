@@ -10,7 +10,7 @@ $connect = dblogin();
         return $text;
     }
 
-    if ( isset($_POST["submit"])) {
+    if (isset($_POST) && !empty($_POST) && isset($_POST["submit"])) {
         $email = clean($_POST["form-el-email"]);
         $username = clean($_POST["form-el-username"]);
         $password = clean($_POST["form-el-password"]);
@@ -25,12 +25,12 @@ $connect = dblogin();
                             </head>
                             <body>
                             <h3>Dear ".$_POST['Username']."Thanks for registering!</h3>".
-                                "<p>Click <a href='http://smartdodging.com/activation.php&email=".$email."'>here</a> to activate your account.</p>". 
+                                "<p>Click <a href='http://smartdodging.com/activation.php?&email=".$email."'>here</a> to activate your account.</p>". 
                                 "<p>The SmartDodging Team</p>
                             </body>
                           </html>";
-        if ($password == $password2 && !empty($_POST)){
-            $sqlselect = "SELECT `Email`, `Username` FROM `users` WHERE Email='$email' OR Username='$username'";
+        if ($password == $password2){
+            $sqlselect = "SELECT `Email`, `Username` FROM `users` WHERE `Email`='$email' OR `Username`='$username' LIMIT  1;";
             $resultselect = mysqli_query($connect, $sqlselect);
             $rowselect = mysqli_fetch_assoc($resultselect);
             if($email != $rowselect['Email'] && $username != $rowselect['Username']){
@@ -39,11 +39,11 @@ $connect = dblogin();
                                            `Password`)
                               VALUES      ('" . $username . "',
                                            '" . $email . "', 
-                                           '" . password_hash($password ,PASSWORD_DEFAULT) . "')";
+                                           '" . md5(md5($password)) . "')";
                 mysqli_query($connect, $sql);
                 echo "<script>alert('You have successfully registered!')</script>";
                 $sqlfk = "INSERT INTO `userDetails` (`Username`)
-                          VALUE     ('".$username."')";
+                          VALUES     ('".$username."')";
                 mysqli_query($connect, $sqlfk);
                 mail($email,$subject,$message,$headers);
                 header("location: home.php");

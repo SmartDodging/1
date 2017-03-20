@@ -11,10 +11,11 @@ if ($rowselect['active'] == 0)
                 SET active = '1'
                 WHERE Email='$email'";
     mysqli_query($conn, $sql);
+    echo "<script>alert('Your account has succesfully been activated!');</script>";
     header("Location: http://smartdodging.com/home");
 }
 else
 {
-    echo 'Already activated!';
+    echo 'This account has already been activated!!';
 }
 ?>

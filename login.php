@@ -2,7 +2,7 @@
 include 'data.php'; 
 if(!empty($_POST)){
 $emaillogin = $_POST["emaillogin"];
-$loginpassword = $_POST["loginpassword"];
+$loginpassword = md5(md5($_POST["loginpassword"]));
 $email = $_GET['email'];
     $sql = "SELECT email, password, role FROM users WHERE email='$emaillogin' AND password='$loginpassword'";
     $resultselect = mysqli_query($conn,$sql);
