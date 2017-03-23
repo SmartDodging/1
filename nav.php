@@ -35,8 +35,6 @@
                   <a class="dropdown-toggle" data-toggle="dropdown" href="#">Community<span class="caret"></span></a>
                   <ul class="dropdown-menu">
                     <li><a href="leaderBoards.php">LeaderBoards</a></li>
-                    <li><a href="#">Your Profile</a></li>
-                    <li><a href="#">Friends</a></li>
                   </ul>
                 </li>
               </ul>
