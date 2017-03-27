@@ -25,10 +25,10 @@
               <ul class="nav navbar-nav">
                 <li class=""><a href="home.php">Home</a></li>
                 <li class="dropdown">
-                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">The Game <span class="caret"></span></a>
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="">The Game <span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Wiki</a></li>
+                    <li><a href="about.php">About</a></li>
+                    <li><a href="wiki.php">Wiki</a></li>
                     <li><a href="download.php">Download (WIP)</a></li>
                   </ul>
                 </li>
@@ -47,11 +47,11 @@
                           <li class="dropdown">
                               <a class="dropdown-toggle" data-toggle="dropdown" href="#">Your Profile<span class="caret"></span></a>
                               <ul class="dropdown-menu">
-                                  <li><a href="#">Your Account</a></li>
-                                  <li><a href="#">Friends</a></li>
+                                  <li><a href="account.php">Your Account</a></li>
+                                  <li><a href="friends.php">Friends And Stuff</a></li>
                                   <hr>
-                                  <li><a href="#">Settings</a></li>
-                                  <li><a href="#">Log Out</a></li>
+                                  <li><a href="settings.php">Settings</a></li>
+                                  <li><a href="logout.php">Log Out</a></li>
                       </ul>
                   <?php endif; ?>
               </ul>
