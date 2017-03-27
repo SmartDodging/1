@@ -1,4 +1,6 @@
-
+<!--<head>
+<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
+</head>-->
 <br>
 <center>
     <div class="container">
@@ -42,9 +44,10 @@
 
     <!--news thingies-->
 
+    <div class="test">
     <div class="container">
-        <div id="blog" class="row">
-            <div class="col-md-10 col-md-offset-2 blogShort">
+        <div id="blog col-md-10" class="row">
+            <div class="col-md-10 blogShort" style="font-size:20px">
                 <h1>News</h1>
                     <img src="css/IMG/21601-news-logo-icon-vector-icon-vector-eps.png" alt="post img" class="pull-left img-responsive thumb img-thumbnail">
                     <!--<em>This snippet use <a href="http://bootsnipp.com/snippets/featured/sexy-sidebar-navigation" target="_blank">Sexy Sidebar Navigation</a></em>-->
@@ -56,7 +59,7 @@
                         </p></article>
                     <a class="btn btn-blog pull-right marginBottom10" href="#">READ MORE</a> 
             </div>
-            <div class="col-md-10 col-md-offset-2 blogShort">
+            <div class="col-md-10  blogShort">
                 <h1>News</h1>
                     <img src="css/IMG/21601-news-logo-icon-vector-icon-vector-eps.png" alt="post img" class="pull-left img-responsive thumb margin10 img-thumbnail">
                         <article><p>
@@ -67,7 +70,7 @@
                         </p></article>
                     <a class="btn btn-blog pull-right marginBottom10" href="#">READ MORE</a> 
             </div>  
-            <div class="col-md-10 col-md-offset-2 blogShort">
+            <div class="col-md-10  blogShort">
                 <h1>News</h1>
                     <img src="css/IMG/21601-news-logo-icon-vector-icon-vector-eps.png" alt="post img" class="pull-left img-responsive thumb margin10 img-thumbnail">
                         <article><p>
@@ -80,8 +83,10 @@
             </div>
         </div>
     </div>
+        </div>
 
-
+    
+<hr>
 <footer>
 pens
 </footer>
