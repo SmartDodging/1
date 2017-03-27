@@ -1,6 +1,7 @@
 <?php
 include ('data.php');
 include ('connect_dp.php');
+session_start();
 $connect = dblogin();
     function clean($text)
     {
@@ -9,7 +10,6 @@ $connect = dblogin();
         $text = addslashes($text);
         return $text;
     }
-
     if (isset($_POST) && !empty($_POST) && isset($_POST["submit"])) {
         $email = clean($_POST["form-el-email"]);
         $username = clean($_POST["form-el-username"]);
@@ -24,7 +24,7 @@ $connect = dblogin();
                                 <title>activation</title>
                             </head>
                             <body>
-                            <h3>Dear ".$_POST['Username']."Thanks for registering!</h3>".
+                            <h3>Dear ".$username."Thanks for registering!</h3>".
                                 "<p>Click <a href='http://smartdodging.com/activation.php?&email=".$email."'>here</a> to activate your account.</p>". 
                                 "<p>The SmartDodging Team</p>
                             </body>
@@ -42,9 +42,6 @@ $connect = dblogin();
                                            '" . md5(md5($password)) . "')";
                 mysqli_query($connect, $sql);
                 echo "<script>alert('You have successfully registered!')</script>";
-                $sqlfk = "INSERT INTO `userDetails` (`Username`)
-                          VALUES     ('".$username."')";
-                mysqli_query($connect, $sqlfk);
                 mail($email,$subject,$message,$headers);
                 header("location: home.php");
             }

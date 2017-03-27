@@ -1,45 +1,46 @@
-<?php 
-include 'data.php'; 
-if(!empty($_POST)){
-$emaillogin = $_POST["emaillogin"];
-$loginpassword = md5(md5($_POST["loginpassword"]));
-$email = $_GET['email'];
-    $sql = "SELECT email, password, role FROM users WHERE email='$emaillogin' AND password='$loginpassword'";
-    $resultselect = mysqli_query($conn,$sql);
+<?php
+session_start();
+include 'data.php';
+include 'connect_dp.php';
+$conn = dblogin();
+function clean($text)
+{
+    $text = trim($text);
+    $text = strip_tags($text);
+    $text = addslashes($text);
+    return $text;
+}
+if(!empty($_POST) && isset($_POST["submit"])) {
+    $userlogin= clean($_POST["form-el-username"]);
+    $pass = clean($_POST['form-el-password']);
+    $passlogin = md5(md5($pass));
+    $sql = "SELECT `Username`, `Password`, `Role`, `Active` FROM `users` WHERE `Username`='$userlogin' AND `Password`='$passlogin'";
+    $resultselect = mysqli_query($conn, $sql);
     $rowselect = mysqli_fetch_assoc($resultselect);
-        if($rowselect['role'] == 'user'){
-    if($rowselect['email'] == $emaillogin and $rowselect['password'] == $loginpassword){
-        header("location: homepage.php");
-    }
+        if ($rowselect['Username'] == $userlogin && $rowselect['Password'] == $passlogin && $rowselect['Active'] == 1){
+            $_SESSION['username'] = $userlogin;
+            if ($rowselect['Role'] == 'user') {
+                echo "<script>window.location = 'http://smartdodging.com/home.php';</script>";
+                $_SESSION['Role'] = "user";
+                header("location: smartdodging.com/index.html");
+            } else if ($rowselect['Role'] == 'admin') {
+                $_SESSION['role'] = "admin";
+                header("location: smartdodging.com/index.html");
+            } else {
+                echo "<script>alert('Username already in use!')</script>";
+            }
+        }
 }
-    else if($rowselect['role'] == 'admin'){
-        if($rowselect['email'] == $emaillogin and $rowselect['password'] == $loginpassword){
-        header("location: homepage_admin.php");
-    }
-    
-}
-    else {
-        
-        echo ("<style> #incorrect{color:red;}</style> <p id='incorrect'>username or password is incorrect</p>");
-        
-    }
-}
-
 ?>
 <center>
     <h1>Log In!</h1>
     <div class="container">
-        <form action="" role="form" class="form-inline">
-            <label for="form-el-email">Username</label>
-            <br>
-            <input type="email" id="form-el-email" class="form-control" placeholder="Username">
+        <form action="" method ="POST" role="form" class="form-inline">
+            <label for="form-el-username">Username</label><br>
+            <input type="text" name="form-el-username" id="form-el-username" class="form-control" placeholder="Username"><br>
+            <label for="form-el-password">Password</label><br>
+            <input type="password" name="form-el-password" id="form-el-password" class="form-control" placeholder="Password"><br>
+            <button class="btn btn-danger" type="submit" name="submit"><span class="glyphicon glyphicon-ok"></span>login</button>
         </form>
-        <form action="" role="form" class="form-inline">
-            <label for="form-el-password">Password</label>
-            <br>
-            <input type="password" id="form-el-password" class="form-control" placeholder="Password">
-        </form>
-        <br>
-        <button class="btn btn-danger" type="button"><span class="glyphicon glyphicon-ok"></span>   login</button>
     </div>
 </center>

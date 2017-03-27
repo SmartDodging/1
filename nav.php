@@ -10,6 +10,7 @@
         <title>Smart Dodging</title>
     </head>
     <body style="padding-top: 50px;">
+    <?php session_start(); ?>
         <nav class="navbar navbar-inverse navbar-fixed-top">
           <div class="container-fluid">
             <div class="navbar-header">

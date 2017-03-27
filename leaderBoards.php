@@ -1,4 +1,5 @@
-<?php 
+<?php
+    session_start();
     include("data.php");
     include ('connect_dp.php');
     $connect = dblogin();
