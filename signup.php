@@ -24,7 +24,7 @@ $connect = dblogin();
                                 <title>activation</title>
                             </head>
                             <body>
-                            <h3>Dear ".$username."Thanks for registering!</h3>".
+                            <h3>Dear ".$username."!<br>Thanks for registering!</h3>".
                                 "<p>Click <a href='http://smartdodging.com/activation.php?&email=".$email."'>here</a> to activate your account.</p>". 
                                 "<p>The SmartDodging Team</p>
                             </body>

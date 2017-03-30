@@ -44,14 +44,15 @@
                 <li><a href="signup.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                 <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                   <?php else: ?>
+                  <li><p id="a-1" class="navbar-brand"><?php echo $_SESSION['username'];?></p></li>
                           <li class="dropdown">
-                              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Your Profile<span class="caret"></span></a>
+                              <a class="dropdown-toggle" data-toggle="dropdown">Your Profile<span class="caret"></span></a>
                               <ul class="dropdown-menu">
                                   <li><a href="#">Your Account</a></li>
                                   <li><a href="#">Friends</a></li>
                                   <hr>
                                   <li><a href="#">Settings</a></li>
-                                  <li><a href="#">Log Out</a></li>
+                                  <li><a onclick="<?php session_destroy(); ?>">Log Out</a></li>
                       </ul>
                   <?php endif; ?>
               </ul>
