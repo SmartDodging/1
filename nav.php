@@ -40,7 +40,7 @@
                 </li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
-                  <?php if (!isset($_SESSION['username'])): ?>
+                      <?php if (!isset($_SESSION['username'])): ?>
                 <li><a href="signup.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                 <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                   <?php else: ?>
@@ -52,7 +52,7 @@
                                   <li><a href="#">Friends</a></li>
                                   <hr>
                                   <li><a href="#">Settings</a></li>
-                                  <li><a onclick="<?php session_destroy(); ?>">Log Out</a></li>
+                                  <li><a href="logout.php">Log Out</a></li>
                       </ul>
                   <?php endif; ?>
               </ul>
