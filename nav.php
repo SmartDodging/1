@@ -27,8 +27,8 @@
                 <li class="dropdown">
                   <a class="dropdown-toggle" data-toggle="dropdown" href="#">The Game <span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Wiki</a></li>
+                    <li><a href="about.php">About</a></li>
+                    <li><a href="wiki.php">Wiki</a></li>
                     <li><a href="download.php">Download (WIP)</a></li>
                   </ul>
                 </li>
@@ -40,11 +40,11 @@
                 </li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
-                      <?php if (!isset($_SESSION['username'])): ?>
+                      <?php if (!isset($_SESSION['Username'])): ?>
                 <li><a href="signup.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                 <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                   <?php else: ?>
-                  <li><p id="a-1" class="navbar-brand"><?php echo $_SESSION['username'];?></p></li>
+                  <li><p id="a-1" class="navbar-brand"><?php echo $_SESSION['Username'];?></p></li>
                           <li class="dropdown">
                               <a class="dropdown-toggle" data-toggle="dropdown">Your Profile<span class="caret"></span></a>
                               <ul class="dropdown-menu">

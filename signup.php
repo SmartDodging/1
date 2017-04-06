@@ -1,63 +1,28 @@
 <?php
 include ('data.php');
-include ('connect_dp.php');
-session_start();
-$connect = dblogin();
-    function clean($text)
-    {
-        $text = trim($text);
-        $text = strip_tags($text);
-        $text = addslashes($text);
-        return $text;
+include('db.php');
+$connect = $dbCon;
+function clean($text)
+{
+    $text = trim($text);
+    $text = strip_tags($text);
+    $text = addslashes($text);
+    return $text;
+}
+if (isset($_POST) && !empty($_POST) && isset($_POST["submit"])) {
+    $email = clean($_POST["form-el-email"]);
+    $user = clean($_POST["form-el-username"]);
+    $password1 = clean($_POST["form-el-password"]);
+    $password2 = clean($_POST["form-el-password2"]);
+    $password = md5(md5($password1));
+    if ($password1 == $password2) {
+        registerUser($connect, $user, $email, $password);
+    } else {
+        echo "<script>alert('Passwords do not match!')</script>";
     }
-    if (isset($_POST) && !empty($_POST) && isset($_POST["submit"])) {
-        $email = clean($_POST["form-el-email"]);
-        $username = clean($_POST["form-el-username"]);
-        $password = clean($_POST["form-el-password"]);
-        $password2 = clean($_POST["form-el-password2"]);
-        $headers = "Content-Type: text/html; charset=UTF-8"."\r\n";
-        $headers .= "From: info@smartdodging.com";
-        $subject = "activate your account!";
-        $message = "<!DOCTYPE html>
-                          <html>
-                            <head>
-                                <title>activation</title>
-                            </head>
-                            <body>
-                            <h3>Dear ".$username."!<br>Thanks for registering!</h3>".
-                                "<p>Click <a href='http://smartdodging.com/activation.php?&email=".$email."'>here</a> to activate your account.</p>". 
-                                "<p>The SmartDodging Team</p>
-                            </body>
-                          </html>";
-        if ($password == $password2){
-            $sqlselect = "SELECT `Email`, `Username` FROM `users` WHERE `Email`='$email' OR `Username`='$username' LIMIT  1;";
-            $resultselect = mysqli_query($connect, $sqlselect);
-            $rowselect = mysqli_fetch_assoc($resultselect);
-            if($email != $rowselect['Email'] && $username != $rowselect['Username']){
-                $sql = "INSERT INTO `users` (`Username`,
-                                           `Email`,
-                                           `Password`)
-                              VALUES      ('" . $username . "',
-                                           '" . $email . "', 
-                                           '" . md5(md5($password)) . "')";
-                mysqli_query($connect, $sql);
-                echo "<script>alert('You have successfully registered!')</script>";
-                mail($email,$subject,$message,$headers);
-                header("location: home.php");
-            }
-            elseif($email == $rowselect['Email']){
-                echo "<script>alert('Email already in use!')</script>";
-            }
-            else{
-                echo "<script>alert('Username already in use!')</script>";
-            }
-            }elseif( empty($_POST)){
-            echo "<script>alert('Only use numbers and letters!')</script>";
-        }
-            else{
-            echo "<script>alert('Passwords do not match!')</script>";
-        }
-    }
+}elseif( empty($_POST)){
+    echo "<script>alert('Fill in all the required fields!')</script>";
+}
 
 
 echo "
@@ -82,6 +47,5 @@ echo "
             </div>
         </div>
         </center>
-                    <!--<p class='help-block' style='color:red;'>Een acternaam is genoeg</p>-->
 ";
 ?>

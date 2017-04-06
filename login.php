@@ -13,10 +13,8 @@ function clean($text)
 if(!empty($_POST) && isset($_POST["submit"])) {
     $userlogin= clean($_POST["form-el-username"]);
     $pass = clean($_POST['form-el-password']);
-    $passlogin = md5(md5($pass));
-    $sql = "SELECT `Username`, `Password`, `Role`, `Active` FROM `users` WHERE `Username`='$userlogin' AND `Password`='$passlogin'";
-    $resultselect = mysqli_query($conn, $sql);
-    $rowselect = mysqli_fetch_assoc($resultselect);
+    $password = md5(md5($pass));
+
         if ($rowselect['Username'] == $userlogin && $rowselect['Password'] == $passlogin && $rowselect['Active'] == 1){
             $_SESSION['username'] = $userlogin;
             if ($rowselect['Role'] == 'user') {
