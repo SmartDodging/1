@@ -10,7 +10,8 @@
         <title>Smart Dodging</title>
     </head>
     <body style="padding-top: 50px;">
-    <?php session_start(); ?>
+    <?php session_start();
+    include_once('db.php');?>
         <nav class="navbar navbar-inverse navbar-fixed-top">
           <div class="container-fluid">
             <div class="navbar-header">

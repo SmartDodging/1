@@ -1,6 +1,6 @@
 <?php
 include ('data.php');
-include('db.php');
+include_once('db.php');
 $connect = $dbCon;
 function clean($text)
 {
@@ -23,9 +23,7 @@ if (isset($_POST) && !empty($_POST) && isset($_POST["submit"])) {
 }elseif( empty($_POST)){
     echo "<script>alert('Fill in all the required fields!')</script>";
 }
-
-
-echo "
+?>
    <center>
     <h1>Sign Up!</h1>
         <div class='demo'>
@@ -47,5 +45,3 @@ echo "
             </div>
         </div>
         </center>
-";
-?>

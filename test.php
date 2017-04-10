@@ -1,7 +1,7 @@
 <?php
 session_start();
 include('nav.php');
-include 'db.php';
+include_once('db.php');
 $connect = $dbCon;
 function clean($text)
 {
@@ -15,9 +15,14 @@ if(!empty($_POST) && isset($_POST["submit"])) {
     $pass = clean($_POST['form-el-password']);
     $password = md5(md5($pass));
     loginUser($connect, $username, $password);
+    if(loginUser($connect, $username, $password)){
+        $_SESSION['Username'] = $username;
+        if($_SESSION['Username'] = $username) {
+            header("location: http://smartdodging.com/home.html");
+        }
+    }
 }
-?>
-<center>
+echo '<center>
     <h1>Log In!</h1>
     <div class="container">
         <form action="" method ="POST" role="form" class="form-inline">
@@ -28,4 +33,5 @@ if(!empty($_POST) && isset($_POST["submit"])) {
             <button class="btn btn-danger" type="submit" name="submit"><span class="glyphicon glyphicon-ok"></span>login</button>
         </form>
     </div>
-</center>
+</center>';
+?>
