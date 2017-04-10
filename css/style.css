@@ -84,6 +84,21 @@ td{
      width: 15%;
      height: 15%;
 }
+.modal-content{
+    background-color: dimgray;
+    height: 800px;
+    width: 75%;
+}
+.profile-info > img {
+    padding: 5px;
+}
+.profile-info{
+    text-align: left
+}
+.profile-stats > h5 {
+    text-align: center;
+}
+
 
 
 
